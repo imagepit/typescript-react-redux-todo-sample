@@ -1,9 +1,9 @@
-import {ActionTypes} from "./ActionTypes";
-import {Todo,MyAction} from "./Models"
+import {ActionTypes} from "./ActionTypes"
+import {Todo} from "./Models"
 
 export class DispatchActions {
-    private dispatch: (action: MyAction) => any;
-    constructor(dispatch: (action: MyAction) => any){
+    private dispatch: (action: any) => any
+    constructor(dispatch: (action: any) => any){
         this.dispatch = dispatch
     }
 

@@ -8,8 +8,3 @@ export class Todo {
     constructor(public text: string, public completed: boolean = false) {
     }
 }
-
-export interface MyAction {
-    type: string
-    todo: Todo
-}

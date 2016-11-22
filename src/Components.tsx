@@ -1,5 +1,5 @@
 import * as React from "react"
-import {GlobalState, MyAction, Todo} from "./Models"
+import {GlobalState, Todo} from "./Models"
 import {DispatchActions} from "./DispatchActions"
 
 //---------------------------
@@ -25,7 +25,7 @@ class TodoComponent extends React.Component<TodoComponentProps, {}> {
             >
                 {todo.text}
             </li>
-        );
+        )
     }
 }
 
@@ -39,14 +39,14 @@ interface TodoListComponentProps extends React.Props<{}> {
 
 class TodoListComponent extends React.Component<TodoListComponentProps, {}> {
     render() {
-        var todos = this.props.state.todos.map(x => <TodoComponent key={x.id} todo={x} actions={this.props.actions}/>);
+        var todos = this.props.state.todos.map(x => <TodoComponent key={x.id} todo={x} actions={this.props.actions}/>)
         return (
             <div>
                 <ul>
                     {todos}
                 </ul>
             </div>
-        );
+        )
     }
 }
 
@@ -72,7 +72,7 @@ class TodoFormComponent extends React.Component<TodoFormComponentProps, {}> {
                 <input type='text' ref='text' />
                 <input type='submit' value='追加' />
             </form>
-        );
+        )
     }
 }
 
@@ -93,6 +93,6 @@ export class TodoApp extends React.Component<TodoAppProps, {}> {
                 <hr />
                 <TodoListComponent state={this.props.state} actions={this.props.actions}/>
             </div>
-        );
+        )
     }
 }
