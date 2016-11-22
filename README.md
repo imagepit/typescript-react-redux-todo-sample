@@ -10,3 +10,12 @@
 - TypeScript 2.0.10
 - React.js 15.4.0
 - Redux 3.6.0
+
+## 実行方法
+
+~~~
+npm install
+typings install
+npm run build
+~~~
+
