@@ -1,0 +1,27 @@
+{
+  "name": "type-react-redux-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "typings install",
+    "build": "webpack --progress --colors --watch --config ./webpack.config.dev.js",
+    "build:prod": "webpack --config ./webpack.config.prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "typings": "^2.0.0",
+    "webpack": "^1.13.3"
+  },
+  "dependencies": {
+    "es6-shim": "^0.35.1",
+    "object-assign": "^4.1.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
+  }
+}
