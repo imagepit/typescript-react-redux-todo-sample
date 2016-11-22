@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "typings install",
     "build": "webpack --progress --colors --watch --config ./webpack.config.dev.js",
-    "build:prod": "webpack --config ./webpack.config.prod.js"
+    "build-prod": "webpack --optimize-minimize --config ./webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",
