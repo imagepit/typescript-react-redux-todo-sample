@@ -1,6 +1,6 @@
 import * as React from "react"
-import {GlobalState, Todo} from "./Models"
-import {DispatchActions} from "./DispatchActions"
+import {GlobalState, Todo} from "./State"
+import {DispatchActions} from "./Dispatcher"
 
 //---------------------------
 // TODO 1アイテム
@@ -9,7 +9,6 @@ interface TodoComponentProps extends React.Props<{}> {
     todo: Todo
     actions: DispatchActions
 }
-
 class TodoComponent extends React.Component<TodoComponentProps, {}> {
     handleClick() {
         this.props.actions.toggle(this.props.todo)
@@ -36,7 +35,6 @@ interface TodoListComponentProps extends React.Props<{}> {
     state: GlobalState
     actions: DispatchActions
 }
-
 class TodoListComponent extends React.Component<TodoListComponentProps, {}> {
     render() {
         var todos = this.props.state.todos.map(x => <TodoComponent key={x.id} todo={x} actions={this.props.actions}/>)
@@ -56,7 +54,6 @@ class TodoListComponent extends React.Component<TodoListComponentProps, {}> {
 interface TodoFormComponentProps extends React.Props<{}> {
     actions: DispatchActions
 }
-
 class TodoFormComponent extends React.Component<TodoFormComponentProps, {}> {
     private handleSubmit(e: React.SyntheticEvent) {
         console.log("TodoFormComponent.handleSubmit")
@@ -83,10 +80,8 @@ interface TodoAppProps extends React.Props<{}> {
     state: GlobalState
     actions: DispatchActions
 }
-
 export class TodoApp extends React.Component<TodoAppProps, {}> {
     render() {
-        console.log(this.props.state)
         return (
             <div>
                 <TodoFormComponent actions={this.props.actions}/>
@@ -96,3 +91,4 @@ export class TodoApp extends React.Component<TodoAppProps, {}> {
         )
     }
 }
+
