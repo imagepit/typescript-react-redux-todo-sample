@@ -49,31 +49,6 @@ class TodoListComponent extends React.Component<TodoListComponentProps, {}> {
 }
 
 //---------------------------
-// TODOの入力フォーム
-//---------------------------
-interface TodoFormComponentProps extends React.Props<{}> {
-    actions: DispatchActions
-}
-class TodoFormComponent extends React.Component<TodoFormComponentProps, {}> {
-    private handleSubmit(e: React.SyntheticEvent) {
-        console.log("TodoFormComponent.handleSubmit")
-        e.preventDefault()
-        var text = this.refs['text'] as HTMLInputElement
-        var todo = new Todo(text.value,false)
-        this.props.actions.add(todo)
-        text.value = ''
-    }
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type='text' ref='text' />
-                <input type='submit' value='追加' />
-            </form>
-        )
-    }
-}
-
-//---------------------------
 // TODOアプリ全体
 //---------------------------
 interface TodoAppProps extends React.Props<{}> {
@@ -92,3 +67,27 @@ export class TodoApp extends React.Component<TodoAppProps, {}> {
     }
 }
 
+//---------------------------
+// TODOの入力フォーム
+//---------------------------
+interface TodoFormComponentProps extends React.Props<{}> {
+    actions: DispatchActions
+}
+class TodoFormComponent extends React.Component<TodoFormComponentProps, {}> {
+    private handleSubmit(e: React.SyntheticEvent<HTMLLinkElement>) {
+        console.log("TodoFormComponent.handleSubmit")
+        e.preventDefault()
+        var text = this.refs['text'] as HTMLInputElement
+        var todo = new Todo(text.value,false)
+        this.props.actions.add(todo)
+        text.value = ''
+    }
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit.bind(this)}>
+                <input type='text' ref='text' />
+                <input type='submit' value='追加' />
+            </form>
+        )
+    }
+}

@@ -10,16 +10,21 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "ts-loader": "^1.2.2",
-    "typescript": "^2.0.10",
-    "typings": "^2.0.0",
-    "webpack": "^1.13.3"
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1"
   },
   "dependencies": {
-    "es6-shim": "^0.35.1",
-    "react": "^15.4.0",
-    "react-dom": "^15.4.0",
-    "react-redux": "^4.4.6",
+    "@types/es6-shim": "^0.31.32",
+    "@types/react": "^15.0.10",
+    "@types/react-dom": "^0.14.23",
+    "@types/react-redux": "^4.4.36",
+    "@types/redux": "^3.6.0",
+    "es6-shim": "^0.35.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
     "redux": "^3.6.0"
   }
 }
